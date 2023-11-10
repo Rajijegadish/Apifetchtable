@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.2.2/font/bootstrap-icons.css">
+    <style>
+            * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color:midnightblue ;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  background-color: palegreen;
+  width: 500px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.container h3 {
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.form {
+  padding: 30px 40px;
+}
+.form-group {
+  color: #333;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #3c40c6;
+  font-weight: 500;
+}
+.form-group input {
+  border: 2px solid #aaa;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+  border-radius: 3px;
+}
+
+.form-group p {
+  font-size: 11px;
+  margin-top: 5px;
+  visibility: hidden;
+}
+
+.form button {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #3c40c6;
+  color: #fff;
+  background-color: #3c40c6;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.form-group.error p {
+  color: #f53b57;
+  visibility: visible;
+}
+.form-group.error input {
+  border-color: red;
+}
+
+.form-group.success input {
+  border-color: green;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" id="form" class="form" autocomplete="off">
+          <h3>Registration Form</h3>
+  
+          <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" id="username" data-name="User Name" placeholder="Enter User Name" />
+            <p>Error Message</p>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" data-name="Email Id" placeholder="Enter Email Id" />
+            <p>Error Message</p>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" data-name="Password" />
+            <p>Error Message</p>
+          </div>
+          <div class="form-group">
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" id="cpassword" placeholder="Enter Confirm Password" data-name="Confirm Password" />
+            <p>Error Message</p>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <script>
+          
+       document.addEventListener("DOMContentLoaded", function () {
+
+function handleFormSubmission(event) {
+  event.preventDefault(); 
+
+  if (validateForm()) {
+    alert("Successfully registered");
+    
+     window.location.replace('ApiFetchLogin.html');
+  }
+}
+function validateForm() {
+  var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var cpassword = document.getElementById("cpassword").value;
+
+  if (username.trim() === "" || email.trim() === "" || password.trim() === "" || cpassword.trim() === "") {
+    alert("Please fill in all fields");
+    return false;
+  }
+  return true;
+}
+var form = document.getElementById("form");
+if (form) {
+  form.addEventListener("submit", handleFormSubmission);
+}
+});
+     </script>    
+</body>
+</html>

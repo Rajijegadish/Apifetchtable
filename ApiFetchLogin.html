@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.2.2/font/bootstrap-icons.css">
+    <style>
+         *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family:"poppins",sans-serif;
+             }
+             body{
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: navy;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  background: #fff;
+  width: 350px;
+  min-height: 400px;
+  box-shadow: rgba(154, 154, 206, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  display: flex;
+
+
+}
+
+
+
+.form h3{
+  font-size: 28px;
+  font-weight: 200;
+  position: inherit;
+  margin-bottom: 30px;
+}
+.form{
+  padding: 60px 25px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.fa{
+  color:navy;
+  /* position: absolute; */
+  top:10px;
+  font-size: 18px;
+}
+
+.form-group{
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+}
+.form-group input{
+  display: block; 
+  width: 100%;
+  padding: 10px 30px;
+  outline: none;
+  border:none;
+  border-bottom: 2px solid rgb(182, 180, 180);
+  font-size: 15px;
+}
+
+.form>a{
+  color:navy;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 35px
+}
+
+button{
+  height: 45px;
+  background:navy;
+  border:none;
+  color:white;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+button+p{
+  text-align: center;
+  padding-top: 30px;
+  font-size: 14px;
+}
+
+button+p a{
+  text-decoration: none;
+  color:navy;
+  font-weight: 500;
+}
+
+
+        .form-group input:focus{
+            outline:navy ;
+            background: whitesmoke;
+            
+        }
+        input[type=text],input[type=password]{
+            width:100%;
+            padding: 5px;
+            margin:8px 0;
+            box-sizing:border-box;
+            border:none;
+            border-bottom: 2px solid navy;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="form" id="form">
+          <h3>Login</h3>
+          <div class="form-group">
+              <i class="fa fa-envelope"></i>Enter Your Email
+              <input type="text" placeholder="Enter your email" id="email" required>
+          </div>
+          <div class="form-group">
+            <i class="fa fa-lock"></i>Enter Your Password
+            <input type="password" placeholder="Enter your password" id="password" required>
+        </div>
+        <a href="#">Forgot password?</a>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="Register.html">Signup now</a></p>
+        </div>
+      </div>
+        
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    function handleLogin() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      if (email.trim() === "" || password.trim() === "") {
+        alert("Please enter both email and password");
+      } else {
+
+        alert("Successfully logged in");
+        
+        window.location.replace('index.html');
+      }
+    }
+    var loginButton = document.querySelector("#form button[type='submit']");
+    if (loginButton) {
+      loginButton.addEventListener("click", handleLogin);
+    }
+  });
+  
+    </script>
+</body>
+</html>
